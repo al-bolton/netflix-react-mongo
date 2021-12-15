@@ -1,17 +1,14 @@
-import { useContext } from "react";
-import { movieList as MovieContext } from './context';
 import Movie from './Movie';
+import './MovieList.css'
 
 
 function MovieList(props) {
-  const movieList = useContext(MovieContext);
-
-  const movies = movieList.map(movie =>
-    <Movie movie={movie} key={movie._id}>{movie.title}</Movie>
+  const movies = props.movies.map(movie =>
+    <Movie movie={movie} key={movie._id}></Movie>
   )
 
   return (
-    <div>
+    <div className="movie-list">
       { movies }
     </div>
   )
